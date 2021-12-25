@@ -2,7 +2,7 @@ import React from 'react'
 import {Card, Button} from 'react-bootstrap'
 
 import '../App.css';
-import MovieRatingStar from '../RatingStar';
+import MovieRating from '../Rating';
 
  const MovieCard = ({ movies }) => {
     return (

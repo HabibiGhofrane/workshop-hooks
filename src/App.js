@@ -1,20 +1,18 @@
 import './App.css';
 import React, { useState } from 'react'
-import {MovieList } from './Components/MovieList';
-import { movieData } from './Components/Data';
-import AddMovie from './Components/AddMovie';
+import {MovieList } from './Component/MovieList';
+import { movieData } from './Component/Data';
+import AddMovie from './Component/AddMovie';
 import {Navbar, Nav, Container} from 'react-bootstrap'
-import FilterByName from './Components/FilterByName';
-import RatingStarFilter from './RatingStar'
-import MyFooter from './Components/MyFooter';
-
-
+import FilterByName from './Component/FilterByName';
+import RatingFilter from './Rating';
+import MyFooter from './Component/MyFooter';
 
 
 function App() {
   const [movies, setMovies] = useState(movieData);
   const [inputSearch, setInputSearch] = useState("");
-  const [starRate, setStarRate] = useState(0);
+  const [Rate, setRate] = useState(0);
 
     const add = (newMovie) => {
       setMovies ([...movies, newMovie])
@@ -28,14 +26,14 @@ function App() {
             <Nav className="me-auto">
               <AddMovie className= "addBtn" add= {add}/>
               <FilterByName  inputSearch={inputSearch} setInputSearch={setInputSearch}/>
-              <div className="StarsFilter">
-              <RatingStarFilter isMovieRating={false} starRate={starRate} setStarRate={setStarRate} />
+              <div className="Filter">
+              <RatingFilter isMovieRating={false} Rate={Rate} setRate={setRate} />
               </div>
             </Nav>
         </Container>
       </Navbar>
           <div className="MovieList">
-            <MovieList movies={movies} inputSearch={inputSearch} starRate={starRate}/>
+            <MovieList movies={movies} inputSearch={inputSearch} Rate={Rate}/>
           </div>
           <MyFooter/>
     </div>
@@ -43,7 +41,6 @@ function App() {
 }
 
 export default App;
-
 
 
 

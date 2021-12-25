@@ -1,10 +1,10 @@
 import { Rate } from 'antd';
 
 const desc = ['terrible', 'bad', 'normal', 'good', 'wonderful'];
-const RatingStar = ({starRate, setStarRate, movieRating, isMovieRating}) => {
+const Rating = ({Rate, setRate, movieRating, isMovieRating}) => {
 
 const handleChange = value => {
-    setStarRate(value);
+    setRate(value);
   };
 
     return (
@@ -16,8 +16,8 @@ const handleChange = value => {
       </span>
       :
       <span>
-        <Rate tooltips={desc} onChange={handleChange} value={starRate} />
+        <Rate tooltips={desc} onChange={handleChange} value={Rate} />
     </span>
     );
   }
-export default RatingStar;
+export default Rating;
