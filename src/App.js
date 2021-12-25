@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useState } from 'react'
-import {MovieList } from './Component/MovieList';
+import { MovieList } from './Component/MovieList';
 import { movieData } from './Component/Data';
 import AddMovie from './Component/AddMovie';
 import {Navbar, Nav, Container} from 'react-bootstrap'
